@@ -18,7 +18,7 @@ SRCS=src/main.c src/system_stm32f4xx.c src/stm32f4xx_it.c src/stm32f4xx_hal_msp.
 PROJ_NAME=blink
 
 # Put your stlink folder here so make burn will work.
-STLINK=/home/dan/STM32/stlink-master
+STLINK=/home/$(USER)/STM32/stlink-master
 
 # Put your STM32F4 library code directory here
 STM_COMMON=/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0
@@ -37,7 +37,7 @@ CFLAGS += -I.
 
 # Include files from STM libraries
 # user "*.h" HEADER file's
-CFLAGS += -I/home/dan/git/stm32/${PROJ_NAME}/inc/
+CFLAGS += -I/home/$(USER)/git/stm32/${PROJ_NAME}/inc/
 # add periphery device on STM32-Discovery Kit
 CFLAGS += -I$(STM_COMMON)/Drivers/BSP/STM32F4-Discovery/
 # add CMSIS library
