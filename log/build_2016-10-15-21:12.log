@@ -1,0 +1,233 @@
+arm-none-eabi-gcc -g -O2 -Wall -Tstm32_flash.ld  -mlittle-endian -mthumb -mcpu=cortex-m4 -mthumb-interwork -mfloat-abi=hard -mfpu=fpv4-sp-d16 -I. -I/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/BSP/STM32F4-Discovery/ -I/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/CMSIS/Include -I/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include/ -I/media/WIN_D/Micro_Cirquit/ARM/STM32F4xx_DSP_StdPeriph_Lib_V1.7.1/Libraries/STM32F4xx_StdPeriph_Driver/inc src/main.c src/system_stm32f4xx.c src/stm32f4xx_it.c src/stm32f4xx_hal_msp.c /media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc/ -o $$project 
+In file included from src/main.c:39:0:
+src/../inc/main.h:43:27: fatal error: stm32f4xx_hal.h: No such file or directory
+ #include "stm32f4xx_hal.h"
+                           ^
+compilation terminated.
+In file included from src/system_stm32f4xx.c:66:0:
+/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:186:3: error: #error "Please select first the target STM32F4xx device used in your application (in stm32f4xx.h file)"
+  #error "Please select first the target STM32F4xx device used in your application (in stm32f4xx.h file)"
+   ^
+src/system_stm32f4xx.c:124:3: error: unknown type name 'uint32_t'
+   uint32_t SystemCoreClock = 16000000;
+   ^
+src/system_stm32f4xx.c:125:3: error: unknown type name '__I'
+   __I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
+   ^
+src/system_stm32f4xx.c:125:15: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'AHBPrescTable'
+   __I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
+               ^
+src/system_stm32f4xx.c: In function 'SystemInit':
+src/system_stm32f4xx.c:158:3: error: 'RCC' undeclared (first use in this function)
+   RCC->CR |= (uint32_t)0x00000001;
+   ^
+src/system_stm32f4xx.c:158:3: note: each undeclared identifier is reported only once for each function it appears in
+src/system_stm32f4xx.c:158:15: error: 'uint32_t' undeclared (first use in this function)
+   RCC->CR |= (uint32_t)0x00000001;
+               ^
+src/system_stm32f4xx.c:158:24: error: expected ';' before numeric constant
+   RCC->CR |= (uint32_t)0x00000001;
+                        ^
+src/system_stm32f4xx.c:164:24: error: expected ';' before numeric constant
+   RCC->CR &= (uint32_t)0xFEF6FFFF;
+                        ^
+src/system_stm32f4xx.c:170:24: error: expected ';' before numeric constant
+   RCC->CR &= (uint32_t)0xFFFBFFFF;
+                        ^
+src/system_stm32f4xx.c:179:3: error: 'SCB' undeclared (first use in this function)
+   SCB->VTOR = FLASH_BASE | VECT_TAB_OFFSET; /* Vector Table Relocation in Internal FLASH */
+   ^
+src/system_stm32f4xx.c:179:15: error: 'FLASH_BASE' undeclared (first use in this function)
+   SCB->VTOR = FLASH_BASE | VECT_TAB_OFFSET; /* Vector Table Relocation in Internal FLASH */
+               ^
+src/system_stm32f4xx.c: In function 'SystemCoreClockUpdate':
+src/system_stm32f4xx.c:221:3: error: unknown type name 'uint32_t'
+   uint32_t tmp = 0, pllvco = 0, pllp = 2, pllsource = 0, pllm = 2;
+   ^
+src/system_stm32f4xx.c:224:9: error: 'RCC' undeclared (first use in this function)
+   tmp = RCC->CFGR & RCC_CFGR_SWS;
+         ^
+src/system_stm32f4xx.c:224:21: error: 'RCC_CFGR_SWS' undeclared (first use in this function)
+   tmp = RCC->CFGR & RCC_CFGR_SWS;
+                     ^
+src/system_stm32f4xx.c:73:26: error: 'uint32_t' undeclared (first use in this function)
+   #define HSI_VALUE    ((uint32_t)16000000) /*!< Value of the Internal oscillator in Hz*/
+                          ^
+src/system_stm32f4xx.c:229:25: note: in expansion of macro 'HSI_VALUE'
+       SystemCoreClock = HSI_VALUE;
+                         ^
+src/system_stm32f4xx.c:73:35: error: expected ')' before numeric constant
+   #define HSI_VALUE    ((uint32_t)16000000) /*!< Value of the Internal oscillator in Hz*/
+                                   ^
+src/system_stm32f4xx.c:229:25: note: in expansion of macro 'HSI_VALUE'
+       SystemCoreClock = HSI_VALUE;
+                         ^
+src/system_stm32f4xx.c:69:35: error: expected ')' before numeric constant
+   #define HSE_VALUE    ((uint32_t)8000000) /*!< Default value of the External oscillator in Hz */
+                                   ^
+src/system_stm32f4xx.c:232:25: note: in expansion of macro 'HSE_VALUE'
+       SystemCoreClock = HSE_VALUE;
+                         ^
+src/system_stm32f4xx.c:239:35: error: 'RCC_PLLCFGR_PLLSRC' undeclared (first use in this function)
+       pllsource = (RCC->PLLCFGR & RCC_PLLCFGR_PLLSRC) >> 22;
+                                   ^
+src/system_stm32f4xx.c:240:29: error: 'RCC_PLLCFGR_PLLM' undeclared (first use in this function)
+       pllm = RCC->PLLCFGR & RCC_PLLCFGR_PLLM;
+                             ^
+src/system_stm32f4xx.c:69:35: error: expected ')' before numeric constant
+   #define HSE_VALUE    ((uint32_t)8000000) /*!< Default value of the External oscillator in Hz */
+                                   ^
+src/system_stm32f4xx.c:245:19: note: in expansion of macro 'HSE_VALUE'
+         pllvco = (HSE_VALUE / pllm) * ((RCC->PLLCFGR & RCC_PLLCFGR_PLLN) >> 6);
+                   ^
+src/system_stm32f4xx.c:245:56: error: 'RCC_PLLCFGR_PLLN' undeclared (first use in this function)
+         pllvco = (HSE_VALUE / pllm) * ((RCC->PLLCFGR & RCC_PLLCFGR_PLLN) >> 6);
+                                                        ^
+src/system_stm32f4xx.c:73:35: error: expected ')' before numeric constant
+   #define HSI_VALUE    ((uint32_t)16000000) /*!< Value of the Internal oscillator in Hz*/
+                                   ^
+src/system_stm32f4xx.c:250:19: note: in expansion of macro 'HSI_VALUE'
+         pllvco = (HSI_VALUE / pllm) * ((RCC->PLLCFGR & RCC_PLLCFGR_PLLN) >> 6);
+                   ^
+src/system_stm32f4xx.c:253:32: error: 'RCC_PLLCFGR_PLLP' undeclared (first use in this function)
+       pllp = (((RCC->PLLCFGR & RCC_PLLCFGR_PLLP) >>16) + 1 ) *2;
+                                ^
+src/system_stm32f4xx.c:73:35: error: expected ')' before numeric constant
+   #define HSI_VALUE    ((uint32_t)16000000) /*!< Value of the Internal oscillator in Hz*/
+                                   ^
+src/system_stm32f4xx.c:257:25: note: in expansion of macro 'HSI_VALUE'
+       SystemCoreClock = HSI_VALUE;
+                         ^
+src/system_stm32f4xx.c:262:9: error: 'AHBPrescTable' undeclared (first use in this function)
+   tmp = AHBPrescTable[((RCC->CFGR & RCC_CFGR_HPRE) >> 4)];
+         ^
+src/system_stm32f4xx.c:262:37: error: 'RCC_CFGR_HPRE' undeclared (first use in this function)
+   tmp = AHBPrescTable[((RCC->CFGR & RCC_CFGR_HPRE) >> 4)];
+                                     ^
+src/stm32f4xx_it.c:41:18: fatal error: main.h: No such file or directory
+ #include "main.h"
+                  ^
+compilation terminated.
+src/stm32f4xx_hal_msp.c:49:27: fatal error: stm32f4xx_hal.h: No such file or directory
+ #include "stm32f4xx_hal.h"
+                           ^
+compilation terminated.
+Makefile:52: ошибка выполнения рецепта для цели «$$project»
+make: *** [$$project] Ошибка 1
+arm-none-eabi-gcc -g -O2 -Wall -Tstm32_flash.ld  -mlittle-endian -mthumb -mcpu=cortex-m4 -mthumb-interwork -mfloat-abi=hard -mfpu=fpv4-sp-d16 -I. -I/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/BSP/STM32F4-Discovery/ -I/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/CMSIS/Include -I/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include/ -I/media/WIN_D/Micro_Cirquit/ARM/STM32F4xx_DSP_StdPeriph_Lib_V1.7.1/Libraries/STM32F4xx_StdPeriph_Driver/inc src/main.c src/system_stm32f4xx.c src/stm32f4xx_it.c src/stm32f4xx_hal_msp.c /media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc/ -o name$.elf 
+In file included from src/main.c:39:0:
+src/../inc/main.h:43:27: fatal error: stm32f4xx_hal.h: No such file or directory
+ #include "stm32f4xx_hal.h"
+                           ^
+compilation terminated.
+In file included from src/system_stm32f4xx.c:66:0:
+/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:186:3: error: #error "Please select first the target STM32F4xx device used in your application (in stm32f4xx.h file)"
+  #error "Please select first the target STM32F4xx device used in your application (in stm32f4xx.h file)"
+   ^
+src/system_stm32f4xx.c:124:3: error: unknown type name 'uint32_t'
+   uint32_t SystemCoreClock = 16000000;
+   ^
+src/system_stm32f4xx.c:125:3: error: unknown type name '__I'
+   __I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
+   ^
+src/system_stm32f4xx.c:125:15: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'AHBPrescTable'
+   __I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
+               ^
+src/system_stm32f4xx.c: In function 'SystemInit':
+src/system_stm32f4xx.c:158:3: error: 'RCC' undeclared (first use in this function)
+   RCC->CR |= (uint32_t)0x00000001;
+   ^
+src/system_stm32f4xx.c:158:3: note: each undeclared identifier is reported only once for each function it appears in
+src/system_stm32f4xx.c:158:15: error: 'uint32_t' undeclared (first use in this function)
+   RCC->CR |= (uint32_t)0x00000001;
+               ^
+src/system_stm32f4xx.c:158:24: error: expected ';' before numeric constant
+   RCC->CR |= (uint32_t)0x00000001;
+                        ^
+src/system_stm32f4xx.c:164:24: error: expected ';' before numeric constant
+   RCC->CR &= (uint32_t)0xFEF6FFFF;
+                        ^
+src/system_stm32f4xx.c:170:24: error: expected ';' before numeric constant
+   RCC->CR &= (uint32_t)0xFFFBFFFF;
+                        ^
+src/system_stm32f4xx.c:179:3: error: 'SCB' undeclared (first use in this function)
+   SCB->VTOR = FLASH_BASE | VECT_TAB_OFFSET; /* Vector Table Relocation in Internal FLASH */
+   ^
+src/system_stm32f4xx.c:179:15: error: 'FLASH_BASE' undeclared (first use in this function)
+   SCB->VTOR = FLASH_BASE | VECT_TAB_OFFSET; /* Vector Table Relocation in Internal FLASH */
+               ^
+src/system_stm32f4xx.c: In function 'SystemCoreClockUpdate':
+src/system_stm32f4xx.c:221:3: error: unknown type name 'uint32_t'
+   uint32_t tmp = 0, pllvco = 0, pllp = 2, pllsource = 0, pllm = 2;
+   ^
+src/system_stm32f4xx.c:224:9: error: 'RCC' undeclared (first use in this function)
+   tmp = RCC->CFGR & RCC_CFGR_SWS;
+         ^
+src/system_stm32f4xx.c:224:21: error: 'RCC_CFGR_SWS' undeclared (first use in this function)
+   tmp = RCC->CFGR & RCC_CFGR_SWS;
+                     ^
+src/system_stm32f4xx.c:73:26: error: 'uint32_t' undeclared (first use in this function)
+   #define HSI_VALUE    ((uint32_t)16000000) /*!< Value of the Internal oscillator in Hz*/
+                          ^
+src/system_stm32f4xx.c:229:25: note: in expansion of macro 'HSI_VALUE'
+       SystemCoreClock = HSI_VALUE;
+                         ^
+src/system_stm32f4xx.c:73:35: error: expected ')' before numeric constant
+   #define HSI_VALUE    ((uint32_t)16000000) /*!< Value of the Internal oscillator in Hz*/
+                                   ^
+src/system_stm32f4xx.c:229:25: note: in expansion of macro 'HSI_VALUE'
+       SystemCoreClock = HSI_VALUE;
+                         ^
+src/system_stm32f4xx.c:69:35: error: expected ')' before numeric constant
+   #define HSE_VALUE    ((uint32_t)8000000) /*!< Default value of the External oscillator in Hz */
+                                   ^
+src/system_stm32f4xx.c:232:25: note: in expansion of macro 'HSE_VALUE'
+       SystemCoreClock = HSE_VALUE;
+                         ^
+src/system_stm32f4xx.c:239:35: error: 'RCC_PLLCFGR_PLLSRC' undeclared (first use in this function)
+       pllsource = (RCC->PLLCFGR & RCC_PLLCFGR_PLLSRC) >> 22;
+                                   ^
+src/system_stm32f4xx.c:240:29: error: 'RCC_PLLCFGR_PLLM' undeclared (first use in this function)
+       pllm = RCC->PLLCFGR & RCC_PLLCFGR_PLLM;
+                             ^
+src/system_stm32f4xx.c:69:35: error: expected ')' before numeric constant
+   #define HSE_VALUE    ((uint32_t)8000000) /*!< Default value of the External oscillator in Hz */
+                                   ^
+src/system_stm32f4xx.c:245:19: note: in expansion of macro 'HSE_VALUE'
+         pllvco = (HSE_VALUE / pllm) * ((RCC->PLLCFGR & RCC_PLLCFGR_PLLN) >> 6);
+                   ^
+src/system_stm32f4xx.c:245:56: error: 'RCC_PLLCFGR_PLLN' undeclared (first use in this function)
+         pllvco = (HSE_VALUE / pllm) * ((RCC->PLLCFGR & RCC_PLLCFGR_PLLN) >> 6);
+                                                        ^
+src/system_stm32f4xx.c:73:35: error: expected ')' before numeric constant
+   #define HSI_VALUE    ((uint32_t)16000000) /*!< Value of the Internal oscillator in Hz*/
+                                   ^
+src/system_stm32f4xx.c:250:19: note: in expansion of macro 'HSI_VALUE'
+         pllvco = (HSI_VALUE / pllm) * ((RCC->PLLCFGR & RCC_PLLCFGR_PLLN) >> 6);
+                   ^
+src/system_stm32f4xx.c:253:32: error: 'RCC_PLLCFGR_PLLP' undeclared (first use in this function)
+       pllp = (((RCC->PLLCFGR & RCC_PLLCFGR_PLLP) >>16) + 1 ) *2;
+                                ^
+src/system_stm32f4xx.c:73:35: error: expected ')' before numeric constant
+   #define HSI_VALUE    ((uint32_t)16000000) /*!< Value of the Internal oscillator in Hz*/
+                                   ^
+src/system_stm32f4xx.c:257:25: note: in expansion of macro 'HSI_VALUE'
+       SystemCoreClock = HSI_VALUE;
+                         ^
+src/system_stm32f4xx.c:262:9: error: 'AHBPrescTable' undeclared (first use in this function)
+   tmp = AHBPrescTable[((RCC->CFGR & RCC_CFGR_HPRE) >> 4)];
+         ^
+src/system_stm32f4xx.c:262:37: error: 'RCC_CFGR_HPRE' undeclared (first use in this function)
+   tmp = AHBPrescTable[((RCC->CFGR & RCC_CFGR_HPRE) >> 4)];
+                                     ^
+src/stm32f4xx_it.c:41:18: fatal error: main.h: No such file or directory
+ #include "main.h"
+                  ^
+compilation terminated.
+src/stm32f4xx_hal_msp.c:49:27: fatal error: stm32f4xx_hal.h: No such file or directory
+ #include "stm32f4xx_hal.h"
+                           ^
+compilation terminated.
+Makefile:52: ошибка выполнения рецепта для цели «name$.elf»
+make: *** [name$.elf] Ошибка 1
+make: Цель «all» не была пересобрана из-за ошибок.

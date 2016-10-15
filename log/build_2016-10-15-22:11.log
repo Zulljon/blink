@@ -1,0 +1,2 @@
+make: *** Нет правила для сборки цели «-I/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Projects/STM32F4-Discovery/Templates/SW4STM32/startup_stm32f407xx.s», требуемой для «blink.elf».
+make: Цель «all» не была пересобрана из-за ошибок.
