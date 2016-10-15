@@ -29,8 +29,8 @@ STM_COMMON=/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0
 CC=arm-none-eabi-gcc
 OBJCOPY=arm-none-eabi-objcopy
 
-#-Tstm32_flash.ld
-CFLAGS  = -g -O2 -Wall -TSTM32F407VGTx_FLASH.ld
+#-Tstm32_flash.ld	-TSTM32F407VGTx_FLASH.ld
+CFLAGS  = -g -O2 -Wall -Tstm32_flash.ld
 CFLAGS += -mlittle-endian -mthumb -mcpu=cortex-m4 -mthumb-interwork
 CFLAGS += -mfloat-abi=hard -mfpu=fpv4-sp-d16
 CFLAGS += -I.
@@ -51,6 +51,7 @@ CFLAGS += -I$(STM_COMMON)/Drivers/STM32F4xx_HAL_Driver/Inc/
 # add startup file to build
 #SRCS += $(STM_COMMON)/Libraries/CMSIS/ST/STM32F4xx/Source/Templates/TrueSTUDIO/startup_stm32f4xx.s
 SRCS += $(STM_COMMON)/Projects/STM32F4-Discovery/Templates/SW4STM32/startup_stm32f407xx.s
+#SRCS += $(STM_COMMON)/Projects/STM32F4-Discovery/Templates/TrueSTUDIO/startup_stm32f407xx.s
 #SRCS += /media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc/
 OBJS = $(SRCS:.c=.o)
 
