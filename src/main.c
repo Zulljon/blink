@@ -60,7 +60,7 @@ static void Error_Handler(void);
 	* @param  None
 	* @retval None
 	*/
-int main(void)
+//int main(void)
 {
 
 	/* STM32F4xx HAL library initialization:
