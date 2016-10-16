@@ -40,10 +40,10 @@
 #define __MAIN_H
 
 /* Define user define's ------------------------------------------------------*/
-#define LED3	ORANGE
-#define LED4	GREEN
-#define LED5	RED
-#define LED6	BLUE
+//#define LED3	ORANGE
+//#define LED4	GREEN
+//#define LED5	RED
+//#define LED6	BLUE
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f4xx_hal.h"

@@ -86,8 +86,8 @@ int main(void)
 	while (1)
 	{
 		if ( BSP_PB_GetState(BUTTON_KEY)){
-			BSP_LED_On(GREEN);	
-		}else {BSP_LED_Off(GREEN);}
+			BSP_LED_On(LED4);	
+		}else {BSP_LED_Off(LED4);}
 	}
 }
 
