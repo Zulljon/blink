@@ -1,0 +1,21 @@
+arm-none-eabi-gcc -g -O2 -Wall -Tstm32_flash.ld -mlittle-endian -mthumb -mcpu=cortex-m4 -mthumb-interwork -mfloat-abi=hard -mfpu=fpv4-sp-d16 -I. -I/home/dan/git/stm32/blink/inc/ -I/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/BSP/STM32F4-Discovery/ -I/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/CMSIS/Include -I/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include/ -I/media/WIN_D/Micro_Cirquit/ARM/STM32F4xx_DSP_StdPeriph_Lib_V1.7.1/Libraries/STM32F4xx_StdPeriph_Driver/inc -I/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/STM32F4xx_HAL_Driver/Inc/ src/main.c src/system_stm32f4xx.c src/stm32f4xx_it.c src/stm32f4xx_hal_msp.c /media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c /media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c /media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c /media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c /media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Projects/STM32F4-Discovery/Templates/SW4STM32/startup_stm32f407xx.s -o blink.elf 
+src/main.c: In function 'main':
+src/main.c:88:8: warning: implicit declaration of function 'BSP_PB_GetState' [-Wimplicit-function-declaration]
+   if ( BSP_PB_GetState(BUTTON_KEY)){
+        ^
+src/main.c:88:24: error: 'BUTTON_KEY' undeclared (first use in this function)
+   if ( BSP_PB_GetState(BUTTON_KEY)){
+                        ^
+src/main.c:88:24: note: each undeclared identifier is reported only once for each function it appears in
+src/main.c:89:4: warning: implicit declaration of function 'BSP_LED_On' [-Wimplicit-function-declaration]
+    BSP_LED_On(LED3); 
+    ^
+src/main.c:89:15: error: 'LED3' undeclared (first use in this function)
+    BSP_LED_On(LED3); 
+               ^
+src/main.c:90:10: warning: implicit declaration of function 'BSP_LED_Off' [-Wimplicit-function-declaration]
+   }else {BSP_LED_Off(LED3);}
+          ^
+Makefile:62: ошибка выполнения рецепта для цели «blink.elf»
+make: *** [blink.elf] Ошибка 1
+make: Цель «all» не была пересобрана из-за ошибок.

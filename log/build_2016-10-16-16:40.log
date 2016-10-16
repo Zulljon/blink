@@ -1,0 +1,10 @@
+arm-none-eabi-gcc -g -O2 -Wall -Tstm32_flash.ld -mlittle-endian -mthumb -mcpu=cortex-m4 -mthumb-interwork -mfloat-abi=hard -mfpu=fpv4-sp-d16 -I. -I/home/dan/git/stm32/blink/inc/ -I/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/BSP/STM32F4-Discovery/ -I/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/CMSIS/Include -I/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include/ -I/media/WIN_D/Micro_Cirquit/ARM/STM32F4xx_DSP_StdPeriph_Lib_V1.7.1/Libraries/STM32F4xx_StdPeriph_Driver/inc -I/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/STM32F4xx_HAL_Driver/Inc/ src/main.c src/system_stm32f4xx.c src/stm32f4xx_it.c src/stm32f4xx_hal_msp.c /media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c /media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c /media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c /media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c /media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Projects/STM32F4-Discovery/Templates/SW4STM32/startup_stm32f407xx.s -o blink.elf 
+/tmp/ccqn03BQ.o: In function `main':
+/home/dan/git/stm32/blink/src/main.c:88: undefined reference to `BSP_PB_GetState'
+/home/dan/git/stm32/blink/src/main.c:89: undefined reference to `BSP_LED_On'
+/home/dan/git/stm32/blink/src/main.c:88: undefined reference to `BSP_PB_GetState'
+/home/dan/git/stm32/blink/src/main.c:90: undefined reference to `BSP_LED_Off'
+collect2: error: ld returned 1 exit status
+Makefile:62: ошибка выполнения рецепта для цели «blink.elf»
+make: *** [blink.elf] Ошибка 1
+make: Цель «all» не была пересобрана из-за ошибок.

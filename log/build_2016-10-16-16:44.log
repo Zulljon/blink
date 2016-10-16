@@ -1,0 +1,74 @@
+arm-none-eabi-gcc -g -O2 -Wall -Tstm32_flash.ld -mlittle-endian -mthumb -mcpu=cortex-m4 -mthumb-interwork -mfloat-abi=hard -mfpu=fpv4-sp-d16 -I. -I/home/dan/git/stm32/blink/inc/ -I/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/BSP/STM32F4-Discovery/ -I/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/CMSIS/Include -I/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include/ -I/media/WIN_D/Micro_Cirquit/ARM/STM32F4xx_DSP_StdPeriph_Lib_V1.7.1/Libraries/STM32F4xx_StdPeriph_Driver/inc -I/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/STM32F4xx_HAL_Driver/Inc/ src/main.c src/system_stm32f4xx.c src/stm32f4xx_it.c src/stm32f4xx_hal_msp.c /media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c /media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c /media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c /media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c /media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/BSP/STM32F4-Discovery//stm32f4_discovery.c /media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/BSP/STM32F4-Discovery//stm32f4_discovery_accelerometer.c /media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/BSP/STM32F4-Discovery//stm32f4_discovery_audio.c /media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Projects/STM32F4-Discovery/Templates/SW4STM32/startup_stm32f407xx.s -o blink.elf 
+/tmp/ccORwdmu.o: In function `SPIx_Init':
+/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/BSP/STM32F4-Discovery//stm32f4_discovery.c:313: undefined reference to `HAL_SPI_GetState'
+/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/BSP/STM32F4-Discovery//stm32f4_discovery.c:330: undefined reference to `HAL_SPI_Init'
+/tmp/ccORwdmu.o: In function `SPIx_WriteRead':
+/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/BSP/STM32F4-Discovery//stm32f4_discovery.c:346: undefined reference to `HAL_SPI_TransmitReceive'
+/tmp/ccORwdmu.o: In function `SPIx_Error':
+/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/BSP/STM32F4-Discovery//stm32f4_discovery.c:360: undefined reference to `HAL_SPI_DeInit'
+/tmp/ccORwdmu.o: In function `I2Cx_Init':
+/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/BSP/STM32F4-Discovery//stm32f4_discovery.c:394: undefined reference to `HAL_I2C_GetState'
+/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/BSP/STM32F4-Discovery//stm32f4_discovery.c:405: undefined reference to `HAL_I2C_Init'
+/tmp/ccORwdmu.o: In function `I2Cx_WriteData':
+/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/BSP/STM32F4-Discovery//stm32f4_discovery.c:420: undefined reference to `HAL_I2C_Mem_Write'
+/tmp/ccORwdmu.o: In function `I2Cx_Error':
+/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/BSP/STM32F4-Discovery//stm32f4_discovery.c:459: undefined reference to `HAL_I2C_DeInit'
+/tmp/ccORwdmu.o: In function `I2Cx_ReadData':
+/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/BSP/STM32F4-Discovery//stm32f4_discovery.c:441: undefined reference to `HAL_I2C_Mem_Read'
+/tmp/ccORwdmu.o: In function `I2Cx_Error':
+/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/BSP/STM32F4-Discovery//stm32f4_discovery.c:459: undefined reference to `HAL_I2C_DeInit'
+/tmp/ccbyFVDA.o: In function `BSP_ACCELERO_Init':
+/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/BSP/STM32F4-Discovery//stm32f4_discovery_accelerometer.c:169: undefined reference to `Lis302dlDrv'
+/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/BSP/STM32F4-Discovery//stm32f4_discovery_accelerometer.c:169: undefined reference to `Lis3dshDrv'
+/tmp/ccbyFVDA.o: In function `BSP_ACCELERO_GetXYZ':
+/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/BSP/STM32F4-Discovery//stm32f4_discovery_accelerometer.c:246: undefined reference to `Lis302dlDrv'
+/tmp/cckZnELH.o: In function `I2S3_Init':
+/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/BSP/STM32F4-Discovery//stm32f4_discovery_audio.c:636: undefined reference to `HAL_I2S_GetState'
+/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/BSP/STM32F4-Discovery//stm32f4_discovery_audio.c:641: undefined reference to `HAL_I2S_Init'
+/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/BSP/STM32F4-Discovery//stm32f4_discovery_audio.c:641: undefined reference to `HAL_I2S_Init'
+/tmp/cckZnELH.o: In function `I2S3_MspInit':
+/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/BSP/STM32F4-Discovery//stm32f4_discovery_audio.c:604: undefined reference to `HAL_DMA_DeInit'
+/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/BSP/STM32F4-Discovery//stm32f4_discovery_audio.c:607: undefined reference to `HAL_DMA_Init'
+/tmp/cckZnELH.o: In function `BSP_AUDIO_OUT_Init':
+/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/BSP/STM32F4-Discovery//stm32f4_discovery_audio.c:231: undefined reference to `HAL_RCCEx_GetPeriphCLKConfig'
+/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/BSP/STM32F4-Discovery//stm32f4_discovery_audio.c:241: undefined reference to `HAL_RCCEx_PeriphCLKConfig'
+/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/BSP/STM32F4-Discovery//stm32f4_discovery_audio.c:251: undefined reference to `HAL_RCCEx_PeriphCLKConfig'
+/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/BSP/STM32F4-Discovery//stm32f4_discovery_audio.c:277: undefined reference to `cs43l22_drv'
+/tmp/cckZnELH.o: In function `BSP_AUDIO_OUT_Play':
+/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/BSP/STM32F4-Discovery//stm32f4_discovery_audio.c:295: undefined reference to `HAL_I2S_Transmit_DMA'
+/tmp/cckZnELH.o: In function `BSP_AUDIO_OUT_Pause':
+/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/BSP/STM32F4-Discovery//stm32f4_discovery_audio.c:330: undefined reference to `HAL_I2S_DMAPause'
+/tmp/cckZnELH.o: In function `BSP_AUDIO_OUT_Resume':
+/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/BSP/STM32F4-Discovery//stm32f4_discovery_audio.c:354: undefined reference to `HAL_I2S_DMAResume'
+/tmp/cckZnELH.o: In function `BSP_AUDIO_OUT_Stop':
+/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/BSP/STM32F4-Discovery//stm32f4_discovery_audio.c:371: undefined reference to `HAL_I2S_DMAStop'
+/tmp/cckZnELH.o: In function `BSP_AUDIO_OUT_SetFrequency':
+/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/BSP/STM32F4-Discovery//stm32f4_discovery_audio.c:467: undefined reference to `HAL_RCCEx_GetPeriphCLKConfig'
+/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/BSP/STM32F4-Discovery//stm32f4_discovery_audio.c:487: undefined reference to `HAL_RCCEx_PeriphCLKConfig'
+/tmp/cckZnELH.o: In function `BSP_AUDIO_IN_Init':
+/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/BSP/STM32F4-Discovery//stm32f4_discovery_audio.c:664: undefined reference to `HAL_RCCEx_GetPeriphCLKConfig'
+/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/BSP/STM32F4-Discovery//stm32f4_discovery_audio.c:684: undefined reference to `HAL_RCCEx_PeriphCLKConfig'
+/tmp/cckZnELH.o: In function `PDMDecoder_Init':
+/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/BSP/STM32F4-Discovery//stm32f4_discovery_audio.c:882: undefined reference to `PDM_Filter_Init'
+/tmp/cckZnELH.o: In function `I2S2_Init':
+/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/BSP/STM32F4-Discovery//stm32f4_discovery_audio.c:976: undefined reference to `HAL_I2S_GetState'
+/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/BSP/STM32F4-Discovery//stm32f4_discovery_audio.c:981: undefined reference to `HAL_I2S_Init'
+/tmp/cckZnELH.o: In function `I2S2_MspInit':
+/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/BSP/STM32F4-Discovery//stm32f4_discovery_audio.c:940: undefined reference to `HAL_DMA_DeInit'
+/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/BSP/STM32F4-Discovery//stm32f4_discovery_audio.c:943: undefined reference to `HAL_DMA_Init'
+/tmp/cckZnELH.o: In function `BSP_AUDIO_IN_Record':
+/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/BSP/STM32F4-Discovery//stm32f4_discovery_audio.c:708: undefined reference to `HAL_I2S_Receive_DMA'
+/tmp/cckZnELH.o: In function `BSP_AUDIO_IN_Stop':
+/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/BSP/STM32F4-Discovery//stm32f4_discovery_audio.c:725: undefined reference to `HAL_I2S_DMAStop'
+/tmp/cckZnELH.o: In function `BSP_AUDIO_IN_Pause':
+/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/BSP/STM32F4-Discovery//stm32f4_discovery_audio.c:740: undefined reference to `HAL_I2S_DMAPause'
+/tmp/cckZnELH.o: In function `BSP_AUDIO_IN_Resume':
+/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/BSP/STM32F4-Discovery//stm32f4_discovery_audio.c:753: undefined reference to `HAL_I2S_DMAResume'
+/tmp/cckZnELH.o: In function `BSP_AUDIO_IN_PDMToPCM':
+/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/BSP/STM32F4-Discovery//stm32f4_discovery_audio.c:794: undefined reference to `PDM_Filter_64_LSB'
+/tmp/cckZnELH.o: In function `BSP_AUDIO_OUT_ChangeBuffer':
+/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/BSP/STM32F4-Discovery//stm32f4_discovery_audio.c:309: undefined reference to `HAL_I2S_Transmit_DMA'
+collect2: error: ld returned 1 exit status
+Makefile:69: ошибка выполнения рецепта для цели «blink.elf»
+make: *** [blink.elf] Ошибка 1
+make: Цель «all» не была пересобрана из-за ошибок.

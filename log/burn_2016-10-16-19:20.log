@@ -1,0 +1,17 @@
+/home/dan/STM32/stlink-master/st-flash write blink.bin 0x8000000
+2016-10-16T19:20:19 INFO src/usb.c: -- exit_dfu_mode
+2016-10-16T19:20:19 INFO src/common.c: Loading device parameters....
+2016-10-16T19:20:19 INFO src/common.c: Device connected is: F4 device, id 0x10076413
+2016-10-16T19:20:19 INFO src/common.c: SRAM size: 0x30000 bytes (192 KiB), Flash: 0x100000 bytes (1024 KiB) in pages of 16384 bytes
+2016-10-16T19:20:19 INFO src/common.c: Attempting to write 101268 (0x18b94) bytes to stm32 address: 134217728 (0x8000000)
+EraseFlash - Sector:0x0 Size:0x4000 Flash page at addr: 0x08000000 erasedEraseFlash - Sector:0x1 Size:0x4000 Flash page at addr: 0x08004000 erasedEraseFlash - Sector:0x2 Size:0x4000 Flash page at addr: 0x08008000 erasedEraseFlash - Sector:0x3 Size:0x4000 Flash page at addr: 0x0800c000 erasedEraseFlash - Sector:0x4 Size:0x10000 Flash page at addr: 0x08010000 erased2016-10-16T19:20:21 INFO src/common.c: Finished erasing 5 pages of 65536 (0x10000) bytes
+2016-10-16T19:20:21 INFO src/common.c: Starting Flash write for F2/F4/L4
+2016-10-16T19:20:21 INFO src/flash_loader.c: Successfully loaded flash loader in sram
+2016-10-16T19:20:24 INFO src/common.c: Starting verification of write complete
+2016-10-16T19:20:26 INFO src/common.c: Flash written and verified! jolly good!
+
+enabling 32-bit flash writes
+size: 32768
+size: 32768
+size: 32768
+size: 2964

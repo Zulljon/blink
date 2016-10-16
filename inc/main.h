@@ -39,16 +39,20 @@
 #ifndef __MAIN_H
 #define __MAIN_H
 
+/* Define user define's ------------------------------------------------------*/
+#define LED3	ORANGE
+#define LED4	GREEN
+#define LED5	RED
+#define LED6	BLUE
+
 /* Includes ------------------------------------------------------------------*/
-//#include "stm32f4xx_hal.h"
-#include <stm32f4xx_hal.h>
+#include "stm32f4xx_hal.h"
+#include "stm32f4_discovery.h"
+
 
 /* Exported types ------------------------------------------------------------*/
 
 /* Exported constants --------------------------------------------------------*/
-//#define STM32F407xx
-#define HAL_RCC_MODULE_ENABLED
-#define HAL_GPIO_MODULE_ENABLED
 
 /* Exported macro ------------------------------------------------------------*/
 

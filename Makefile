@@ -8,15 +8,23 @@ STM_COMMON=/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0
 
 # HAL source files
 HAL_DIR=$(STM_COMMON)/Drivers/STM32F4xx_HAL_Driver/Src
-HAL_FILES=$(HAL_DIR)/stm32f4xx_hal.c
-HAL_FILES += $(HAL_DIR)/stm32f4xx_hal_rcc.c
-HAL_FILES += $(HAL_DIR)/stm32f4xx_hal_gpio.c
-HAL_FILES += $(HAL_DIR)/stm32f4xx_hal_cortex.c
+HAL_FILES=$(HAL_DIR)/*.c
+#HAL_FILES=$(HAL_DIR)/stm32f4xx_hal.c
+#HAL_FILES += $(HAL_DIR)/stm32f4xx_hal_rcc.c
+#HAL_FILES += $(HAL_DIR)/stm32f4xx_hal_gpio.c
+#HAL_FILES += $(HAL_DIR)/stm32f4xx_hal_cortex.c
 #HAL_FILES += $(HAL_DIR)/stm32f4xx_hal_.c
 #HAL_FILES += $(HAL_DIR)/stm32f4xx_hal_.c
 
+# add BSP source file's
+BSP_DIR=/media/WIN_D/Micro_Cirquit/ARM/STM32Cube_FW_F4_V1.13.0/Drivers/BSP/STM32F4-Discovery/
+BSP_FILES=$(BSP_DIR)/stm32f4_discovery.c
+#BSP_FILES += $(BSP_DIR)/stm32f4_discovery_accelerometer.c
+#BSP_FILES += $(BSP_DIR)/stm32f4_discovery_audio.c
+
+
 # Put your source files here (or *.c, etc)
-SRCS=src/main.c src/system_stm32f4xx.c src/stm32f4xx_it.c src/stm32f4xx_hal_msp.c $(HAL_FILES)
+SRCS=src/main.c src/system_stm32f4xx.c src/stm32f4xx_it.c src/stm32f4xx_hal_msp.c $(HAL_FILES) $(BSP_FILES)
 
 # Put your stlink folder here so make burn will work.
 STLINK=$(HOME)/STM32/stlink-master
@@ -68,5 +76,5 @@ clean:
 	rm -f *.o $(PROJ_NAME).elf $(PROJ_NAME).hex $(PROJ_NAME).bin
 
 # Flash the STM32F4
-#burn: proj
-#	$(STLINK)/st-flash write $(PROJ_NAME).bin 0x8000000
+burn: proj
+	$(STLINK)/st-flash write $(PROJ_NAME).bin 0x8000000
